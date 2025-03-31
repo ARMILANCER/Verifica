@@ -53,32 +53,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         listView.setOnItemLongClickListener(parent, view, position,id -> {
-
-            activities.remove(position);
-            adapter.notifyDataSetChanged();
-            saveActivities();
-
-        });
-
-
-
-
-
-
-        listView.setOnItemLongClickListener((parent, view, position, id) -> {
             activities.remove(position);
             adapter.notifyDataSetChanged();
             saveActivities();
             return true;
         });
     }
-
     private Set<String> getSavedActivities() {
         return sharedPreferences.getStringSet("activity_list", new HashSet<>());
     }
-
     private void saveActivities() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putStringSet("activity_list", new HashSet<>(activities));
