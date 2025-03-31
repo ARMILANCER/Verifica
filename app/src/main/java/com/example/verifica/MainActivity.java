@@ -48,10 +48,24 @@ public class MainActivity extends AppCompatActivity {
                     saveActivities();
                     editText.setText("");
                 } else {
-                    Toast.makeText(MainActivity.this, "Testo non rilevato", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Campo 'Aggiungi Attività' vuoto", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
+        listView.setOnItemLongClickListener(parent, view, position,id -> {
+
+            activities.remove(position);
+            adapter.notifyDataSetChanged();
+            saveActivities();
+
+        });
+
+
+
+
+
 
         listView.setOnItemLongClickListener((parent, view, position, id) -> {
             activities.remove(position);
