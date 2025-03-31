@@ -1,0 +1,7 @@
+<resources>
+    <string name = "app_name">Verifica</string>
+    <string name = "reg_act">Registra Activita</string>
+    <string name="registra_attivit">Registra Attività</string>
+    <string name="aggiungi_attivit">Aggiungi attività</string>
+    <string name="registro_attivit">Registro Attività</string>
+</resources>
